@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial section</title>
+
+    <style>
+        .reviews {
+    display: flex;
+    font-family:'Nunito', sans-serif;
+    margin-top: 15rem;
+}
+
+
+.reviews .review-card{
+    display: flex;
+}
+
+
+
+/*-------Right side----------*/
+
+.reviews .review-card-right .container{
+    margin: -5rem 0 0 5rem;
+    padding: 1rem;
+    font-family:'Nunito', sans-serif;
+}
+
+.reviews .review-card-right .container .veiw-box{
+    height: 450px;
+    position: absolute;
+    display: flex; 
+    background-color: #f8f8ff;
+    margin-left: -4rem;
+    overflow: hidden;
+
+}
+.reviews .review-card-right .container .veiw-box #testimonials{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.reviews .review-card-right .container .veiw-box #testimonials .user{
+    width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.reviews .review-card-right .container .veiw-box #testimonials .user img{
+    width: 80px;
+    border-radius: 100px;
+    position: absolute;
+    height: auto;
+    text-align: left;
+    left:15%;
+}
+.reviews .review-card-right .container .veiw-box #testimonials .user p{
+    font-size: 20px;
+    color: #6f7581;
+    line-height: 33px;
+    width: 350px;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-top: 8rem;
+}
+
+.reviews .review-card-right .container .veiw-box #testimonials .user h2{
+    font-size: 16px;
+    color: #403f52;
+    font-weight: 700!important;
+    transition: all .3s ease-in-out;
+    text-align: left;
+    margin-top: 3rem;
+}
+.reviews .review-card-right .container .veiw-box .controls{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 44%;
+    top: 96%;
+}
+.reviews .review-card-right .container .veiw-box .controls span{
+    width: 8px;
+    height: 8px;
+    background: #5472d2;
+    border-radius: 15px;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.reviews .review-card-right .container .veiw-box .controls .active{
+    width: 25px !important;
+}
+
+
+
+
+/* Add responsive styles */
+@media (max-width: 430px) {
+    .reviews {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .review-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="reviews">
+        <div class="review-card">
+           <div class="review-card-right">
+            <div class="container">
+                <div class="veiw-box">
+                    <div id="testimonials">
+                        
+                        <div class="user">
+                            <img src="./image/Review-1.jpg" alt="">
+                            <h5></h5>
+                            <span></span>
+                            <p>We take photos to capture moments and people that we love. We are happy when there are more and more people who like what we do.</p>
+                        </div>
+                        
+                        <div class="user space">
+                            <img src="./image/Review-1.jpg" alt="">
+                            <h5></h5>
+                            <span></span>
+                            <p>We take photos to capture moments and people that we love. We are happy when there are more and more people who like what we do.</p>
+                        </div>
+                        
+                        <div class="user">
+                            <img src="./image/Review-1.jpg" alt="">
+                            <h5></h5>
+                            <span></span>
+                            <p>We take photos to capture moments and people that we love. We are happy when there are more and more people who like what we do.</p>
+                        </div>
+
+                        
+                        
+                    </div>
+                    
+                    <div class="controls">
+                        <span id="control1"></span>
+                        <span id="control2" class="active"></span>
+                        <span id="control3"></span>
+                    </div>
+                    
+                </div>
+                
+            </div>
+           </div>
+        </div>
+    </section>
+    
+
+    <script>
+        //Testimonials Right side (Customer reviews)
+
+var testimonials = document.getElementById('testimonials');
+var control1 = document.getElementById('control1');
+var control2 = document.getElementById('control2');
+var control3 = document.getElementById('control3');
+
+
+control1.onclick=function(){
+    testimonials.style.transform = "translateX(50px)"; //650
+    control1.classList.add("active");
+    control2.classList.remove("active");
+    control3.classList.remove("active");
+}
+
+control2.onclick=function(){
+    testimonials.style.transform = "translateX(50px)";
+    control1.classList.remove("active");
+    control2.classList.add("active");
+    control3.classList.remove("active");
+}
+
+control3.onclick=function(){
+    testimonials.style.transform = "translateX(10px)"; //540
+    control1.classList.remove("active");
+    control2.classList.remove("active");
+    control3.classList.add("active");
+}
+
+    </script>
+</body>
+</html>
